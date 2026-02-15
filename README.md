@@ -60,19 +60,6 @@ The system prioritizes clean command design, ease of extension, and maintainable
 
 The system follows a modular, layered architecture to separate concerns and allow rapid iteration.
 
-```mermaid
-
-graph TD
-    User --> DiscordServer
-    DiscordServer --> BotInterface
-
-    BotInterface --> CommandLayer
-    CommandLayer --> WorkflowLogic
-
-    BotInterface --> UtilityLayer
-    UtilityLayer --> Logging
-
-
 ### Core Layers
 - Bot Interface Layer: Discord bot entry point and event handling
 - Command Layer: Cog-based command modules
