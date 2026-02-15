@@ -61,14 +61,13 @@ The system prioritizes clean command design, ease of extension, and maintainable
 The system follows a modular, layered architecture to separate concerns and allow rapid iteration.
 
 ```mermaid
-
 graph TD
     User[Discord User] -->|Commands| Discord[Discord Server]
 
-    Discord -->|Events & Messages| Bot[Discord Bot Interface Layer]
+    Discord -->|Events and Messages| Bot[Bot Interface Layer]
 
-    Bot --> CommandLayer[Command Layer (Cogs)]
-    CommandLayer --> Workflow[Automation & Workflow Logic]
+    Bot --> CommandLayer[Command Layer - Cogs]
+    CommandLayer --> Workflow[Automation and Workflow Logic]
 
     Workflow --> NotionLayer[Notion Integration Layer]
     NotionLayer --> NotionDB[Notion Database]
@@ -76,11 +75,12 @@ graph TD
     Bot --> Config[Configuration Layer]
     Config --> Env[Environment Variables]
 
-    Bot --> Utils[Utility & Diagnostics Layer]
-    Utils --> Logs[Logging & Validation]
+    Bot --> Utils[Utility and Diagnostics Layer]
+    Utils --> Logs[Logging and Validation]
 
     Bot --> Response[Response Handler]
     Response --> Discord
+
 
 
 ### Core Layers
