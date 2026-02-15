@@ -1,7 +1,7 @@
 import requests
 import json
-from functionality.utils import *
-from functionality.search import *
+from feature.utils import *
+from feature.search import *
 
 def patch(notion_key, payload, searchObj_toDelete):
     headers = {
