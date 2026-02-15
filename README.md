@@ -62,25 +62,20 @@ The system follows a modular, layered architecture to separate concerns and allo
 
 ```mermaid
 graph TD
-    User[Discord User] -->|Commands| Discord[Discord Server]
+    User --> DiscordServer
+    DiscordServer --> BotInterface
 
-    Discord -->|Events and Messages| Bot[Bot Interface Layer]
+    BotInterface --> CommandLayer
+    CommandLayer --> WorkflowLogic
 
-    Bot --> CommandLayer[Command Layer - Cogs]
-    CommandLayer --> Workflow[Automation and Workflow Logic]
+    WorkflowLogic --> NotionIntegration
+    NotionIntegration --> NotionDatabase
 
-    Workflow --> NotionLayer[Notion Integration Layer]
-    NotionLayer --> NotionDB[Notion Database]
+    BotInterface --> ConfigurationLayer
+    ConfigurationLayer --> EnvironmentVariables
 
-    Bot --> Config[Configuration Layer]
-    Config --> Env[Environment Variables]
-
-    Bot --> Utils[Utility and Diagnostics Layer]
-    Utils --> Logs[Logging and Validation]
-
-    Bot --> Response[Response Handler]
-    Response --> Discord
-
+    BotInterface --> UtilityLayer
+    UtilityLayer --> Logging
 
 
 ### Core Layers
