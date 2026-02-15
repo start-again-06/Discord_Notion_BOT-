@@ -60,11 +60,8 @@ The system prioritizes clean command design, ease of extension, and maintainable
 
 The system follows a modular, layered architecture to separate concerns and allow rapid iteration.
 
-```mermaid
 flowchart LR
-    User[Discord User]
-
-    User --> DiscordServer[Discord Server]
+    User[Discord User] --> DiscordServer[Discord Server]
     DiscordServer --> Bot[Bot Interface]
 
     Bot --> Commands[Command Modules]
@@ -75,8 +72,7 @@ flowchart LR
 
     Bot --> Config[Configuration]
     Bot --> Utils[Utilities]
-
-    Utils --> Stability[Validation and Logs]
+    Utils --> Logs[Validation and Logging]
 
 ### Core Layers
 - Bot Interface Layer: Discord bot entry point and event handling
