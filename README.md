@@ -69,12 +69,6 @@ graph TD
     BotInterface --> CommandLayer
     CommandLayer --> WorkflowLogic
 
-    WorkflowLogic --> NotionIntegration
-    NotionIntegration --> NotionDatabase
-
-    BotInterface --> ConfigurationLayer
-    ConfigurationLayer --> EnvironmentVariables
-
     BotInterface --> UtilityLayer
     UtilityLayer --> Logging
 
