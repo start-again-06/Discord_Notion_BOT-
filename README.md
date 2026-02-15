@@ -61,6 +61,7 @@ The system prioritizes clean command design, ease of extension, and maintainable
 The system follows a modular, layered architecture to separate concerns and allow rapid iteration.
 
 ```mermaid
+
 graph TD
     User --> DiscordServer
     DiscordServer --> BotInterface
